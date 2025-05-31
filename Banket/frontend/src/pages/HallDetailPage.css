@@ -1,0 +1,350 @@
+/* Общая обёртка */
+.detail-wrapper {
+  max-width: 1140px;
+  margin: 60px auto;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* Заголовок и адрес */
+.detail-header {
+  margin-bottom: 24px;
+}
+
+.detail-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.detail-address {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Фото */
+.detail-image-container {
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.detail-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* Основные секции */
+.detail-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.detail-section {
+  flex: 1 1 48%;
+}
+
+.detail-section h2 {
+  font-size: 1.6rem;
+  color: #f43f5e;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #f43f5e;
+  padding-bottom: 6px;
+}
+
+.detail-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.detail-section ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.detail-section li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.detail-section li strong {
+  color: #111;
+}
+
+/* Кнопка */
+.detail-button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.detail-book-button {
+  background: #f43f5e;
+  color: white;
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(244, 63, 94, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.detail-book-button:hover {
+  background-color: #e11d48;
+  transform: scale(1.05);
+}
+
+/* Комментарии */
+.comment-section {
+  margin-top: 70px;
+  border-top: 2px dashed #ccc;
+  padding-top: 40px;
+}
+
+.comment-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #111;
+  text-align: center;
+}
+
+/* Форма */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.comment-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  resize: vertical;
+}
+
+.comment-textarea:focus {
+  border-color: #f43f5e;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+}
+
+.comment-submit {
+  align-self: flex-end;
+  background-color: #f43f5e;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.comment-submit:hover {
+  background-color: #e11d48;
+}
+
+/* Список комментариев */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Один комментарий */
+.comment-card {
+  background-color: #f9f9f9;
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.comment-card:hover {
+  background-color: #f4f4f4;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.comment-header strong {
+  color: #222;
+}
+
+.comment-card p {
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Dropdown */
+.comment-actions {
+  position: relative;
+}
+
+.dots-button {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #888;
+  padding: 0;
+}
+
+.dots-button:hover {
+  color: #f43f5e;
+}
+
+.comment-dropdown {
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  z-index: 10;
+}
+
+.comment-dropdown:hover {
+  background-color: #f8f8f8;
+}
+
+.comment-dropdown button {
+  width: 100%;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.comment-dropdown button:hover {
+  background-color: #f8f8f8;
+}
+
+/* Edit форма */
+.edit-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form textarea {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.edit-form button {
+  align-self: flex-start;
+  background-color: #f43f5e;
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.edit-form button:hover {
+  background-color: #da3551;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .detail-info {
+    flex-direction: column;
+  }
+
+  .detail-section {
+    flex: 1 1 100%;
+  }
+
+  .detail-image {
+    height: auto;
+    max-height: 340px;
+  }
+}
+
+/* Характеристики в виде карточек */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.feature-card {
+  background-color: #f9fafb;
+  border: 1px solid #e4e4e7;
+  border-left: 4px solid #f43f5e;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card strong {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0;
+}
+
+.detail-extra-list {
+  padding-left: 20px;
+  margin-top: 15px;
+  list-style: disc;
+  color: #444;
+}
+
+.detail-extra-list li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}

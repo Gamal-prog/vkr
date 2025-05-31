@@ -1,0 +1,126 @@
+.client-dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.client-dashboard-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.client-dashboard-section {
+  margin-bottom: 40px;
+}
+
+.client-dashboard-section h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f43f5e;
+  padding-bottom: 8px;
+  color: #f43f5e;
+}
+
+.client-dashboard-list-item {
+  background: #fdf2f8;
+  border-left: 4px solid #f43f5e;
+  margin-bottom: 15px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  font-size: 16px;
+}
+
+.event-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.client-dashboard-status {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.client-dashboard-status.approved {
+  color: #22c55e;
+}
+
+.client-dashboard-status.rejected {
+  color: #ef4444;
+}
+
+.client-dashboard-status.pending {
+  color: #f59e0b;
+}
+
+.client-dashboard-empty {
+  font-style: italic;
+  color: #888;
+}
+
+.client-dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.client-dashboard-subblock {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-link {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 500;
+  color: #f43f5e;
+  border: 1px solid #f43f5e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #ffe6e6;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.chat-link:hover {
+  background: #ffc9d1;
+  color: #d92048;
+}
+
+.payment-link {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: 500;
+  color: white;
+  background: #22c55e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.payment-link:hover {
+  background: #16a34a;
+}
+
+.btn-enable-pay {
+  background-color: #f59e0b;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-enable-pay:hover {
+  background-color: #d97706;
+}
