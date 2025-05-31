@@ -121,12 +121,12 @@ function ListHallsPage() {
               <div className="hall-card" key={hall.id}>
                 <Link to={`/halls/${hall.id}`}>
                   <img src={imageUrl} alt={hall.name} className="hall-image" />
-                 </Link>
-                <div className="hall-info">
-                  <h3><Link to={`/halls/${hall.id}`}>{hall.name}</Link></h3>
-                  <p>{hall.address || 'Без адреса'}</p>
-                  <p>Вместимость: {hall.capacity_min} — {hall.capacity_max}</p>
-                </div>
+                  <div className="hall-info">
+                    <h3>{hall.name}</h3>
+                    <p>{hall.address || 'Без адреса'}</p>
+                    <p>Вместимость: {hall.capacity_min} — {hall.capacity_max}</p>
+                  </div>
+                </Link>
               </div>
             );
           })}

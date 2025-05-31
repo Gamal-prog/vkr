@@ -137,7 +137,11 @@ const HomePage = () => {
       <section className="cities-section">
         <h2>Залы в городах</h2>
         <div className="slider-container">
-          <button className="slider-button left" onClick={scrollLeft}>&#8592;</button>
+          {/* <button className="slider-button left" onClick={scrollLeft}> */}
+            <svg className="slider-button right" onClick={scrollLeft}  xmlns="http://www.w3.org/2000/svg" width="70" height="90" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+              <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+            </svg>
+          {/* </button> */}
           <div className="cities-slider" ref={sliderRef}>
             {cities.map((city, index) => (
               <div
@@ -153,7 +157,11 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-          <button className="slider-button right" onClick={scrollRight}>&#8594;</button>
+          {/* <button className="slider-button right" onClick={scrollRight}> */}
+            <svg className="slider-button right" onClick={scrollRight} xmlns="http://www.w3.org/2000/svg" width="70" height="90" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
+          {/* </button> */}
         </div>
       </section>
 
@@ -168,14 +176,14 @@ const HomePage = () => {
               <div className="recommended-card" key={hall.id}>
                 <Link to={`/halls/${hall.id}`}>
                   <img src={imageUrl} alt={hall.name} />
+                  <div className="card-info">
+                    <h3>
+                      {hall.name}
+                    </h3>
+                    <p className="location">{hall.city_name || 'Без города'}</p>
+                    <div className="price">от {hall.price || 0} сом</div>
+                  </div>
                 </Link>
-                <div className="card-info">
-                  <h3>
-                    <Link to={`/halls/${hall.id}`}>{hall.name}</Link>
-                  </h3>
-                  <p className="location">{hall.city_name || 'Без города'}</p>
-                  <div className="price">от {hall.price || 0} сом</div>
-                </div>
               </div>
             );
           })}

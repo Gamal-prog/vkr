@@ -1,7 +1,7 @@
 .halls-page {
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
-  background: #f5f7fa;
+  /* background: #f5f7fa; */
   min-height: 100vh;
 }
 
@@ -22,7 +22,8 @@
   background: #ffffff;
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04);
+  border-top: 4px solid #f43f5e;
 }
 
 .filters input,
@@ -63,7 +64,7 @@
 
 .hall-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* 🖼 Фото */

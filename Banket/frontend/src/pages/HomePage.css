@@ -25,7 +25,7 @@
 
 /* 🏙️ Блок с городами */
 .cities-section {
-  padding: 60px 20px;
+  padding: 60px 0px;
   background-color: #f8f9fa;
   position: relative;
   text-align: center;
@@ -42,7 +42,11 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 0 60px;
+  /* padding: 0 20px; */
+}
+
+.slider-container svg {
+  color: #f43f5e;
 }
 
 /* 📤 Сам слайдер */
@@ -94,26 +98,31 @@
 /* ⬅️➡️ Кнопки */
 .slider-button {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  /* width: 46px;
+  height: 46px; */
+  /* border-radius: 50%; */
   border: none;
-  background: rgba(255, 0, 234, 0.15);
-  color: #f43f5e;
-  font-size: 22px;
-  cursor: pointer;
+  /* background: rgba(255, 0, 234, 0.15); */
+  /* color: #f43f5e; */
+  /* font-size: 22px;
+  cursor: pointer; */
   z-index: 5;
+  color: #f43f5e;
   transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* background-color: #f9fafb; */
+
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); */
 }
 .slider-button:hover {
-  background: rgba(200, 0, 184, 0.15);
+  /* background: rgba(200, 0, 184, 0.15); */
+  /* width: 46px;
+  height: 46px; */
   transform: translateY(-50%) scale(1.1);
 }
 .slider-button.left {

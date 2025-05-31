@@ -84,17 +84,23 @@ const OwnerDashboard = () => {
   return (
     <div className="owner-dashboard-container">
       <div className="top-actions-row">
-        <div className="add-hall-block">
-          <h2>Добавить новый зал</h2>
-          <p>Хотите опубликовать новый зал? Укажите описание, вместимость, теги и фото — и начните получать заявки!</p>
-          <Link to="/halls/add" className="add-hall-link">Добавить зал</Link>
+        <div className="add-hall-block hall-block-with-image">
+          {/* <img src="../../public/images/owner-hall-rent.jpg" alt="фон" className="hall-bg" /> */}
+          <div className="hall-content">
+            <h2>Добавить новый зал</h2>
+            <p>Хотите опубликовать новый зал? Укажите описание, вместимость, теги и фото — и начните получать заявки!</p>
+            <Link to="/halls/add" className="add-hall-link">Добавить зал</Link>
+          </div>
         </div>
-        
 
-        <div className="my-halls-block">
-          <h2>Мои залы</h2>
-          <p>Посмотрите список всех ваших опубликованных залов. Вы можете управлять, редактировать или удалять их.</p>
-          <Link to="/my-halls" className="my-halls-link">Перейти к списку</Link>
+
+        <div className="my-halls-block hall-block-with-image">
+          {/* <img src="../../public/images/my-owner-hall.jpg" alt="фон" className="hall-bg" /> */}
+          <div className="hall-content">
+            <h2>Мои залы</h2>
+            <p>Посмотрите список всех ваших опубликованных залов. Вы можете управлять, редактировать или удалять их.</p>
+            <Link to="/my-halls" className="my-halls-link">Перейти к списку</Link>
+          </div>
         </div>
       </div>
 
@@ -117,13 +123,21 @@ const OwnerDashboard = () => {
             .filter(b => b.status === view)
             .map(booking => (
               <div key={booking.id} className="booking-card">
+                {booking.hall_image && (
+                  <div className="booking-image">
+                    <img src={booking.hall_image} alt="Фото зала" />
+                  </div>
+                )}
                 <div className="booking-info">
-                  <p><strong>Зал:</strong> {booking.hall_name}</p>
-                  <p><strong>Название мероприятия: </strong>{booking.event_name}</p>
-                  <p><strong>Время:</strong> {booking.date} в {booking.time}</p>
-                  <p><strong>Описание:</strong> {booking.description || '—'}</p>
-                  <p><strong>Вместимость:</strong> {booking.people_count} человек</p>
-                  <p><strong>Статус:</strong> {booking.status}</p>
+                  <h1>{booking.hall_name}</h1> {/*Зал: */}
+                  <h3>{booking.event_name}</h3> {/*Название мероприятия: */}
+                  <p className={`${ 
+                    booking.status === 'approved' ? 'status-approved' : 
+                    booking.status === 'rejected' ? 'status-rejected' : ''
+                  }`}>{booking.status}</p> {/*Статус: */}
+                  <p>{booking.people_count} человек</p> {/*Вместимость:*/}
+                  <p>{booking.date} в {booking.time}</p> {/*Время: */}
+                  <p>{booking.description || '—'}</p> {/*Описание: */}
 
                   <div className="booking-buttons">
                     {booking.status === 'pending' && (
@@ -147,11 +161,7 @@ const OwnerDashboard = () => {
                     )}
                   </div>
                 </div>
-                {booking.hall_image && (
-                  <div className="booking-image">
-                    <img src={booking.hall_image} alt="Фото зала" />
-                  </div>
-                )}
+                
               </div>
             ))
         )}
