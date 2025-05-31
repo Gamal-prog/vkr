@@ -38,8 +38,10 @@ function ClientDashboard() {
   );
 
   return (
+    <div className="page">
+
     <div className="client-dashboard-container">
-      <h2 className="client-dashboard-title">Личный кабинет клиента</h2>
+      <h1 className="client-dashboard-title">Состояние бронирования</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
       <div className="client-dashboard-grid">
@@ -53,11 +55,11 @@ function ClientDashboard() {
               requests.map(b => (
                 <div key={b.id} className="client-dashboard-list-item">
                   <div className="event-head">
-                    <strong>{b.event_name}</strong>
+                    <h5>{b.event_name}</h5>
                     <span className="client-dashboard-status pending">🕒 Ожидает</span>
                   </div>
-                  <p>Дата: {b.date} в {b.time}</p>
                   <p>Зал: <strong>{b.hall_name}</strong></p>
+                  <p>Дата: {b.date} в {b.time}</p>
                 </div>
               ))
             )}
@@ -122,6 +124,8 @@ function ClientDashboard() {
           </div>
         </section>
       </div>
+    </div>
+
     </div>
   );
 }

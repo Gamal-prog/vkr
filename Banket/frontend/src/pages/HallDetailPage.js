@@ -109,10 +109,6 @@ function HallDetailPage() {
 
   return (
     <div className="detail-wrapper">
-      <div className="detail-header">
-        <h1 className="detail-title">{hall.name}</h1>
-        <p className="detail-address">{hall.address}</p>
-      </div>
 
       {hall.image && (
         <div className="detail-image-container">
@@ -120,40 +116,64 @@ function HallDetailPage() {
         </div>
       )}
 
+      <div className="detail-header">
+        <h1 className="detail-title">{hall.name}</h1>
+        <p className="detail-address">{hall.address}</p>
+      </div>
+
       <div className="detail-section">
-        <h2>Описание</h2>
+        <h3>Описание</h3>
         <p>{hall.description || '—'}</p>
       </div>
 
       <div className="detail-section">
-        <h2>Основные характеристики</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <strong>Цена</strong>
+        <h3>Основные характеристики</h3>
+        <ul className="cop-detail-extra-list">
+          <li>
+            Цена <br />
             <p>{hall.price ? `${hall.price} сом` : '—'}</p>
-          </div>
-          <div className="feature-card">
-            <strong>Алкоголь</strong>
+          </li>
+          <li>Алкоголь <br />
             <p>{hall.alcohol_option === 'allowed' ? 'Разрешено' : 'Запрещено'}</p>
-          </div>
-          <div className="feature-card">
-            <strong>Вместимость</strong>
+            </li>
+          <li>
+            Вместимость <br />
             <p>{hall.capacity_min} – {hall.capacity_max}</p>
-          </div>
-          <div className="feature-card">
-            <strong>Еда</strong>
+            </li>
+          <li>
+            Еда <br />
             <p>{hall.food_option === 'venue' ? 'От заведения' : 'Своя'}</p>
-          </div>
-        </div>
+            </li>
+        </ul>
       </div>
 
       <div className="detail-section">
-        <h2>Дополнительные сведения</h2>
+        <h3>Дополнительные сведения</h3>
         <ul className="detail-extra-list">
-          <li><strong>Теги:</strong> {hall.tags || '—'}</li>
-          <li><strong>Мероприятия:</strong> {hall.event_types || '—'}</li>
-          <li><strong>Обслуживание:</strong> {hall.service ? 'Есть' : 'Нет'}</li>
-          <li><strong>Правила:</strong> {hall.rules || '—'}</li>
+          <li>
+            Теги 
+            <div className="features-grid">
+              {(hall.tags || '—')
+                .split(/[\s,]+/)
+                .filter(Boolean)
+                .map((tag, index) => (
+                  <div key={index} className="feature-card">
+                    <p>
+                      {tag}
+                    </p>
+                  </div>
+              ))}
+            </div>
+          </li>
+          <li>Мероприятия <br />
+            <p>{hall.event_types || '—'}</p>
+            </li>
+          <li>Обслуживание <br />
+            <p>{hall.service ? 'Есть' : 'Нет'}</p>
+            </li>
+          <li>Правила <br />
+            <p>{hall.rules || '—'}</p>
+            </li>
         </ul>
       </div>
 
